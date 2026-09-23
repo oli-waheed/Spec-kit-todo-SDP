@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Tasks</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>To-Do List</h1>
+
+      <form id="task-form" class="task-form" novalidate>
+        <label class="sr-only" for="task-input">Task description</label>
+        <input
+          id="task-input"
+          name="task"
+          type="text"
+          placeholder="Add a task..."
+          maxlength="200"
+          autocomplete="off"
+        />
+        <button type="submit">Add</button>
+      </form>
+
+      <p id="validation-message" class="validation-message" aria-live="polite" hidden></p>
+
+      <ul id="task-list" class="task-list" aria-live="polite"></ul>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
