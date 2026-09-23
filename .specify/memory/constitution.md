@@ -1,50 +1,54 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report
+Version change: N/A → 1.0.0
+Modified principles: N/A
+Added sections: Core Principles, Additional Constraints, Development Workflow, Governance
+Removed sections: none
+Follow-up TODOs:
+- TODO(RATIFICATION_DATE): original adoption date not yet recorded; confirm before formal ratification.
+-->
+
+# Spec Kit Todo SDP Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Clear Intent Before Work
+Every task must start with a specific outcome, a bounded scope, and an explicit acceptance condition. If the goal is unclear, the team must stop and refine requirements before implementation begins. This reduces rework, prevents scope drift, and keeps execution aligned with the project’s actual needs.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Small, Reviewable Changes
+Work must be broken into the smallest meaningful units that can be reasoned about, validated, and reviewed in isolation. Changes that cannot be explained in a short summary are too large and must be decomposed. Small increments preserve accountability and make regressions easier to diagnose.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Test-First and Evidence-Driven Validation
+New behavior must be validated with the smallest realistic test or verification step before the implementation is considered complete. Where automation is available, it must be used to prove the expected result. Evidence is required for claims of correctness, not assumptions.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Traceability and Documentation
+Project decisions, requirements, and task progress must remain traceable from the user request through implementation to validation. If a change cannot be tied back to a requirement or rationale, it is not ready for completion. Documentation is part of the delivery, not an afterthought.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Minimal, Maintainable Complexity
+The project must prefer direct, readable solutions over clever or opaque ones. Complexity must be justified by user need, operational constraints, or measurable maintainability benefits. Simpler solutions are preferable when they meet the same requirement without increasing risk.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Additional Constraints
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+- All work must remain within the repository scope and avoid speculative changes outside the active feature or governance request.
+- Security and privacy considerations are mandatory for any handling of user content, credentials, or operational data.
+- Dependencies, tools, and runtime assumptions must be explicit and documented when introduced or changed.
+- Generated or edited artifacts must be consistent with the repository’s intended workflow and must not bypass project governance requirements.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## Development Workflow
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+1. Define the target problem, boundary, and expected outcome before starting work.
+2. Break the task into actionable increments that can be checked independently.
+3. Validate the smallest relevant proof of correctness before merging or finalizing the change.
+4. Review the result for clarity, traceability, and compliance with the project principles.
+5. Record any follow-up issues that remain outside the current scope so the work remains honest and auditable.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution governs all work conducted in this repository. It supersedes informal practices when the two conflict, and it must be followed unless a documented exception is approved by the project owner and recorded in the associated task or change record.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+- Amendments require a written proposal, clear rationale, and a version update before they are considered effective.
+- Versioning follows semantic versioning: MAJOR for incompatible governance or principle changes, MINOR for new principles or materially expanded guidance, and PATCH for clarifying or non-semantic edits.
+- Compliance review is required for any change that affects project scope, workflow, standards, or quality gates.
+- Any unresolved governance gap or missing operational detail must be recorded as a TODO with the owning field name and explanation until it is resolved.
+
+**Version**: 1.0.0 | **Ratified**: 2026-09-24: original adoption date not yet recorded | **Last Amended**: 2026-09-24
